@@ -16,6 +16,13 @@
 		43FD0D8629CA4B64009CAE2E /* replyAiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FD0D8529CA4B64009CAE2E /* replyAiTests.swift */; };
 		43FD0D9029CA4B64009CAE2E /* replyAiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FD0D8F29CA4B64009CAE2E /* replyAiUITests.swift */; };
 		43FD0D9229CA4B64009CAE2E /* replyAiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FD0D9129CA4B64009CAE2E /* replyAiUITestsLaunchTests.swift */; };
+		43FD0D9F29CA4B7A009CAE2E /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FD0D9E29CA4B7A009CAE2E /* ChatView.swift */; };
+		43FD0DA129CA6CE5009CAE2E /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FD0DA029CA6CE5009CAE2E /* ChatBubble.swift */; };
+		43FD0DA329CA7B9E009CAE2E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FD0DA229CA7B9E009CAE2E /* SettingsView.swift */; };
+		43FD0DAB29CA82D2009CAE2E /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FD0DAA29CA82D2009CAE2E /* ThemeManager.swift */; };
+		43FD0DAD29CA82EE009CAE2E /* AppThemeEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FD0DAC29CA82EE009CAE2E /* AppThemeEnvironmentKey.swift */; };
+		43FD0DAF29CA87B1009CAE2E /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FD0DAE29CA87B1009CAE2E /* ViewExtension.swift */; };
+		43FD0DB129CA9F5A009CAE2E /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FD0DB029CA9F5A009CAE2E /* ShareViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,13 @@
 		43FD0D8B29CA4B64009CAE2E /* replyAiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = replyAiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43FD0D8F29CA4B64009CAE2E /* replyAiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = replyAiUITests.swift; sourceTree = "<group>"; };
 		43FD0D9129CA4B64009CAE2E /* replyAiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = replyAiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		43FD0D9E29CA4B7A009CAE2E /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		43FD0DA029CA6CE5009CAE2E /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
+		43FD0DA229CA7B9E009CAE2E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		43FD0DAA29CA82D2009CAE2E /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		43FD0DAC29CA82EE009CAE2E /* AppThemeEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemeEnvironmentKey.swift; sourceTree = "<group>"; };
+		43FD0DAE29CA87B1009CAE2E /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		43FD0DB029CA9F5A009CAE2E /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +120,13 @@
 				43FD0D7C29CA4B64009CAE2E /* Info.plist */,
 				43FD0D7929CA4B64009CAE2E /* replyAi.xcdatamodeld */,
 				43FD0D7429CA4B64009CAE2E /* Preview Content */,
+				43FD0D9E29CA4B7A009CAE2E /* ChatView.swift */,
+				43FD0DA029CA6CE5009CAE2E /* ChatBubble.swift */,
+				43FD0DA229CA7B9E009CAE2E /* SettingsView.swift */,
+				43FD0DAA29CA82D2009CAE2E /* ThemeManager.swift */,
+				43FD0DAC29CA82EE009CAE2E /* AppThemeEnvironmentKey.swift */,
+				43FD0DAE29CA87B1009CAE2E /* ViewExtension.swift */,
+				43FD0DB029CA9F5A009CAE2E /* ShareViewController.swift */,
 			);
 			path = replyAi;
 			sourceTree = "<group>";
@@ -265,8 +286,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43FD0DA329CA7B9E009CAE2E /* SettingsView.swift in Sources */,
+				43FD0DB129CA9F5A009CAE2E /* ShareViewController.swift in Sources */,
 				43FD0D7829CA4B64009CAE2E /* Persistence.swift in Sources */,
+				43FD0DA129CA6CE5009CAE2E /* ChatBubble.swift in Sources */,
+				43FD0DAB29CA82D2009CAE2E /* ThemeManager.swift in Sources */,
+				43FD0DAF29CA87B1009CAE2E /* ViewExtension.swift in Sources */,
+				43FD0DAD29CA82EE009CAE2E /* AppThemeEnvironmentKey.swift in Sources */,
 				43FD0D7129CA4B63009CAE2E /* ContentView.swift in Sources */,
+				43FD0D9F29CA4B7A009CAE2E /* ChatView.swift in Sources */,
 				43FD0D7B29CA4B64009CAE2E /* replyAi.xcdatamodeld in Sources */,
 				43FD0D6F29CA4B63009CAE2E /* replyAiApp.swift in Sources */,
 			);
