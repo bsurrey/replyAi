@@ -13,6 +13,9 @@ struct SettingsView: View {
     @Environment(\.colorScheme) private var systemColorScheme
     @Environment(\.appTheme) private var appTheme
     @Environment(\.presentationMode) var presentationMode
+    
+    @AppStorage("prompt") var prompt: String = "Reply to the entered Text in german, be helpful, creative, clever, funny or reply in thr same style and slang."
+    @AppStorage("sendDirectly") var sendDirectly: Bool = false
         
     var body: some View {
         NavigationView {
@@ -28,6 +31,11 @@ struct SettingsView: View {
                             }
                         }
                 }
+                
+                Section(header: Text("Debug")) {
+                    TextField("prompt", text: $prompt)
+                    Toggle("Send directly", isOn: $sendDirectly)
+                }.padding()
             }
             .navigationTitle("Settings")
             .toolbar {

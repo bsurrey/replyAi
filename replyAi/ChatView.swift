@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 
 struct ChatView: View {
-    @State var prompt: String = "Reply to the entered Text in german, be helpful, creative, clever, funny or reply in thr same style and slang."
     @State private var message: String = ""
     @State var messages: [(String, Bool)] = []
     @State private var isSending: Bool = false
@@ -19,10 +18,12 @@ struct ChatView: View {
     @State private var remainingChars: Int = 500
     @State private var showClearAlert = false
     @State private var pasteboardText: String?
-    @State var sendDirectly = true // declare sendDirectly as a State variable
     
     @Environment(\.colorScheme) private var systemColorScheme
     @Environment(\.appTheme) private var appTheme
+    
+    @AppStorage("prompt") var prompt: String?
+    @AppStorage("sendDirectly") var sendDirectly: Bool?
     
     var body: some View {
         NavigationView {
@@ -82,54 +83,49 @@ struct ChatView: View {
                                     }
                                 }
                             }
-                        }.padding(.all)
-                        
-                    }
-                    
-                    
-                }
-                
-                VStack {
-                    Section(header: Text("Debug")) {
-                        TextField("prompt", text: $prompt)
-                        Toggle("Send directly", isOn: $sendDirectly)
-                    }.padding()
-                }
-                
-                HStack {
-                    TextField("Type your message...", text: limitedTextBinding($message, maxLength: 500), onCommit: sendDirectly ? sendMessageDirect : sendMessage)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .disabled(isSending)
-                        .frame(height: 50)
-                        .lineLimit(4)
-                        .submitLabel(.send)
-                        .onChange(of: pasteboardText) { value in
-                            // Handle shared text
-                            guard let sharedText = value else {
-                                return
-                            }
-                            message += sharedText
-                            pasteboardText = nil
                         }
-                    
-                    Button(action: {
-                        message = ""
-                        remainingChars = 500
-                    }) {
-                        Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(.gray)
-                    }.disabled(isSending)
-                    
-                    Text("\(remainingChars)")
-                        .font(.footnote)
-                        .foregroundColor(.gray)
-                    
-                    if isSending {
-                        ProgressView()
-                            .padding(.trailing)
                     }
                 }.padding(.horizontal)
-                    .background(Color(.systemGray6))
+                
+                HStack {
+                    HStack {
+                        VStack {
+                            TextField("Type your message...", text: limitedTextBinding($message, maxLength: 500), onCommit: sendMessageDirect)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .disabled(isSending)
+                                .frame(height: 50)
+                                .lineLimit(4)
+                                .submitLabel(.send)
+                                .onChange(of: pasteboardText) { value in
+                                    // Handle shared text
+                                    guard let sharedText = value else {
+                                        return
+                                    }
+                                    message += sharedText
+                                    pasteboardText = nil
+                                }
+                        }
+                        HStack {
+                            Button(action: {
+                                message = ""
+                                remainingChars = 500
+                            }) {
+                                Image(systemName: "xmark.circle.fill")
+                                    .foregroundColor(.gray)
+                            }.disabled(isSending)
+                            
+                            Text("\(remainingChars)")
+                                .font(.footnote)
+                                .foregroundColor(.gray)
+                            
+                            if isSending {
+                                ProgressView()
+                                    .padding(.trailing)
+                            }
+                        }
+                    }
+                    .padding(.horizontal)
+                }.background(Color(.systemGray6))
             }
             .navigationBarItems(leading: Button(action: {
                 showClearAlert.toggle()
@@ -210,13 +206,13 @@ struct ChatView: View {
         isSending = true
         
         let apiKey = "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"
-        let url = URL(string: "https://api.openai.com/v1/engines/text-davinci-003/completions")!
+        let url = URL(string: "https://api.openai.com/v1/chat/completions")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let prompt = prompt + "\n\nHuman: " + message + "\n\nResponse:"
+        let prompt = prompt! + "\n\nHuman: " + message + "\n\nResponse:"
         let payload: [String: Any] = [
             "prompt": prompt,
             "temperature": 0.8,
@@ -243,8 +239,6 @@ struct ChatView: View {
             }
         }.resume()
     }
-    
-    
 }
 
 // Add a custom TextFieldDelegate class to limit characters
@@ -263,10 +257,14 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
         ChatView(messages: [
-            ("hello world", true),
-            ("hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world", false),
-            ("hello world", true),
-            ("hello world", false),
+            ("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.", true),
+            ("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.", false),
+            ("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.", true),
+            ("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.", false),
+            ("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.", true),
+            ("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.", false),
+            ("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.", true),
+            ("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.", false),
         ])
     }
 }
@@ -274,7 +272,7 @@ struct ChatView_Previews: PreviewProvider {
 struct TextFieldHeightPreferenceKey: PreferenceKey {
     typealias Value = CGFloat
     
-    static var defaultValue: CGFloat = 40
+    static var defaultValue: CGFloat = 80
     
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
         value = nextValue()
