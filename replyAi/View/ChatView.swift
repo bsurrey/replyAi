@@ -18,140 +18,139 @@ struct ChatView: View {
     @State private var remainingChars: Int = 500
     @State private var showClearAlert = false
     @State private var pasteboardText: String?
+    @State private var showSettings = false
     
     @Environment(\.colorScheme) private var systemColorScheme
     @Environment(\.appTheme) private var appTheme
+    @EnvironmentObject var themeManager: ThemeManager
     
-    @AppStorage("prompt") var prompt: String?
+    // @AppStorage("prompt") var prompt: String?
+    @State var prompt: String = "Reply to the entered Text in german, be helpful, creative, clever, funny or reply in thr same style and slang."
     @AppStorage("sendDirectly") var sendDirectly: Bool?
     
     var body: some View {
-        NavigationView {
-            VStack {
-                ScrollView {
-                    ScrollViewReader { proxy in
-                        VStack(alignment: .leading, spacing: 8) {
-                            ForEach(messages.indices, id: \.self) { index in
-                                let (msg, isUser) = messages[index]
-                                HStack {
-                                    if isUser {
-                                        Spacer()
-                                    }
-                                    if index == messages.count - 1 && !isUser && isSending {
-                                        ProgressView()
-                                            .frame(width: 30, height: 30)
-                                            .background(ChatBubble(isUser: isUser).fill(Color.gray))
-                                            .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
-                                            .id(index)
-                                        
-                                    } else {
-                                        HStack {
-                                            Text(msg)
-                                                .padding(10)
-                                                .background(ChatBubble(isUser: isUser).fill(isUser ? Color.blue : Color.gray))
-                                                .foregroundColor(isUser ? Color.white : Color.black)
-                                                .transition(.asymmetric(insertion: .move(edge: isUser ? .trailing : .leading), removal: .move(edge: isUser ? .leading : .trailing)))
+        ZStack {
+            NavigationStack {
+                VStack {
+                    ScrollView {
+                        ScrollViewReader { proxy in
+                            VStack(alignment: .leading, spacing: 8) {
+                                ForEach(messages.indices, id: \.self) { index in
+                                    let (msg, isUser) = messages[index]
+                                    HStack {
+                                        if isUser {
+                                            Spacer()
+                                        }
+                                        if index == messages.count - 1 && !isUser && isSending {
+                                            ProgressView()
+                                                .frame(width: 30, height: 30)
+                                                .background(ChatBubble(isUser: isUser).fill(Color.gray))
+                                                .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
                                                 .id(index)
-                                                .contextMenu {
-                                                    if !isUser {
-                                                        Button(action: {
-                                                            // Handle share action
-                                                            shareMessage(index: index)
-                                                        }) {
-                                                            Label("Share", systemImage: "square.and.arrow.up")
+                                            
+                                        } else {
+                                            HStack {
+                                                Text(msg)
+                                                    .padding(10)
+                                                    .background(ChatBubble(isUser: isUser).fill(isUser ? Color.blue : Color.gray))
+                                                    .foregroundColor(isUser ? Color.white : Color.black)
+                                                    .transition(.asymmetric(insertion: .move(edge: isUser ? .trailing : .leading), removal: .move(edge: isUser ? .leading : .trailing)))
+                                                    .id(index)
+                                                    .contextMenu {
+                                                        if !isUser {
+                                                            Button(action: {
+                                                                // Handle share action
+                                                                shareMessage(index: index)
+                                                            }) {
+                                                                Label("Share", systemImage: "square.and.arrow.up")
+                                                            }
                                                         }
                                                     }
-                                                }
-                                            if !isUser {
-                                                Button(action: {
-                                                    // Handle share action
-                                                    shareMessage(index: index)
-                                                }) {
-                                                    Image(systemName: "square.and.arrow.up")
-                                                        .foregroundColor(.gray)
+                                                if !isUser {
+                                                    Button(action: {
+                                                        // Handle share action
+                                                        shareMessage(index: index)
+                                                    }) {
+                                                        Image(systemName: "square.and.arrow.up")
+                                                            .foregroundColor(.gray)
+                                                    }
                                                 }
                                             }
                                         }
+                                        if !isUser {
+                                            Spacer()
+                                        }
                                     }
-                                    if !isUser {
-                                        Spacer()
-                                    }
-                                }
-                                .onAppear {
-                                    withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0)) {
-                                        proxy.scrollTo(index, anchor: .bottom)
+                                    .onAppear {
+                                        withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0)) {
+                                            proxy.scrollTo(index, anchor: .bottom)
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
-                }.padding(.horizontal)
-                
-                HStack {
+                    }.padding(.horizontal)
+                    
                     HStack {
-                        VStack {
-                            TextField("Type your message...", text: limitedTextBinding($message, maxLength: 500), onCommit: sendMessageDirect)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .disabled(isSending)
-                                .frame(height: 50)
-                                .lineLimit(4)
-                                .submitLabel(.send)
-                                .onChange(of: pasteboardText) { value in
-                                    // Handle shared text
-                                    guard let sharedText = value else {
-                                        return
-                                    }
-                                    message += sharedText
-                                    pasteboardText = nil
-                                }
-                        }
                         HStack {
-                            Button(action: {
-                                message = ""
-                                remainingChars = 500
-                            }) {
-                                Image(systemName: "xmark.circle.fill")
+                            VStack {
+                                TextField("Type your message...", text: limitedTextBinding($message, maxLength: 500), onCommit: sendMessageDirect)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .disabled(isSending)
+                                    .frame(height: 50)
+                                    .lineLimit(4)
+                                    .submitLabel(.send)
+                                    .onChange(of: pasteboardText) { value in
+                                        // Handle shared text
+                                        guard let sharedText = value else {
+                                            return
+                                        }
+                                        message += sharedText
+                                        pasteboardText = nil
+                                    }
+                            }
+                            HStack {
+                                Button(action: {
+                                    message = ""
+                                    remainingChars = 500
+                                }) {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .foregroundColor(.gray)
+                                }.disabled(isSending)
+                                
+                                Text("\(remainingChars)")
+                                    .font(.footnote)
                                     .foregroundColor(.gray)
-                            }.disabled(isSending)
-                            
-                            Text("\(remainingChars)")
-                                .font(.footnote)
-                                .foregroundColor(.gray)
-                            
-                            if isSending {
-                                ProgressView()
-                                    .padding(.trailing)
+                                
+                                if isSending {
+                                    ProgressView()
+                                        .padding(.trailing)
+                                }
                             }
                         }
-                    }
-                    .padding(.horizontal)
-                }.background(Color(.systemGray6))
+                        .padding(.horizontal)
+                    }.background(Color(.systemGray6))
+                }
+                .navigationBarItems(leading: Button(action: {
+                    showClearAlert.toggle()
+                }) {
+                    Image(systemName: "xmark")
+                        .imageScale(.large)
+                        .frame(width: 44, height: 44, alignment: .leading)
+                }, trailing: Button(action: {
+                    showSettings.toggle()
+                }) {
+                    Image(systemName: "gear")
+                        .imageScale(.large)
+                        .frame(width: 44, height: 44, alignment: .trailing)
+                })
             }
-            .navigationBarItems(leading: Button(action: {
-                showClearAlert.toggle()
-            }) {
-                Image(systemName: "xmark")
-                    .imageScale(.large)
-                    .frame(width: 44, height: 44, alignment: .leading)
-            }, trailing: Button(action: {
-                showSettingsView.toggle()
-            }) {
-                Image(systemName: "gear")
-                    .imageScale(.large)
-                    .frame(width: 44, height: 44, alignment: .trailing)
-            })
-            .navigationBarTitle(Text("replyAi"), displayMode: .inline)
-            .sheet(isPresented: $showSettingsView) {
-                SettingsView()
-                    .preferredColorScheme(appTheme == .system ? nil : appTheme.colorScheme)
+            .preferredColorScheme(themeManager.currentColorScheme) // Use the currentColorScheme property
+            .alert(isPresented: $showClearAlert) {
+                Alert(title: Text("Clear Chat Log"), message: Text("Are you sure you want to clear the chat log?"), primaryButton: .destructive(Text("Clear")) {
+                    messages.removeAll()
+                }, secondaryButton: .cancel())
             }
-        }
-        .preferredColorScheme(appTheme == .system ? nil : appTheme.colorScheme)
-        
-        .alert(isPresented: $showClearAlert) {
-            Alert(title: Text("Clear Chat Log"), message: Text("Are you sure you want to clear the chat log?"), primaryButton: .destructive(Text("Clear")) {
-                messages.removeAll()
-            }, secondaryButton: .cancel())
         }
     }
     
@@ -205,14 +204,14 @@ struct ChatView: View {
         guard !message.isEmpty else { return }
         isSending = true
         
-        let apiKey = "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"
-        let url = URL(string: "https://api.openai.com/v1/chat/completions")!
+        let apiKey = "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"
+        let url = URL(string: "https://api.openai.com/v1/engines/text-davinci-003/completions")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let prompt = prompt! + "\n\nHuman: " + message + "\n\nResponse:"
+        let prompt = prompt + "\n\nHuman: " + message + "\n\nResponse:"
         let payload: [String: Any] = [
             "prompt": prompt,
             "temperature": 0.8,
@@ -239,6 +238,7 @@ struct ChatView: View {
             }
         }.resume()
     }
+    
 }
 
 // Add a custom TextFieldDelegate class to limit characters
@@ -266,6 +266,7 @@ struct ChatView_Previews: PreviewProvider {
             ("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.", true),
             ("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.", false),
         ])
+        .environmentObject(ThemeManager())
     }
 }
 

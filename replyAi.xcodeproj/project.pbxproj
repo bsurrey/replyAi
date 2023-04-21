@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		434A368C29E4C5D800D39CE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434A368B29E4C5D800D39CE7 /* AppDelegate.swift */; };
+		434A368E29E4CF3400D39CE7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434A368D29E4CF3400D39CE7 /* MainView.swift */; };
+		434A369029E4D8F800D39CE7 /* StructuresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434A368F29E4D8F800D39CE7 /* StructuresView.swift */; };
+		434A369229E4D9EB00D39CE7 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434A369129E4D9EB00D39CE7 /* WelcomeView.swift */; };
+		435F92B529F1FB4D008803E7 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435F92B429F1FB4D008803E7 /* AppState.swift */; };
+		435F92B729F1FF66008803E7 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435F92B629F1FF66008803E7 /* OnboardingView.swift */; };
+		435F92B929F20957008803E7 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435F92B829F20957008803E7 /* UserDefaultsManager.swift */; };
+		435F92BB29F22CEE008803E7 /* AppleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435F92BA29F22CEE008803E7 /* AppleSignInManager.swift */; };
+		43BD689429E4F1F500FEA265 /* BlobLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BD688F29E4F1F500FEA265 /* BlobLayer.swift */; };
+		43BD689529E4F1F500FEA265 /* ResizableLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BD689029E4F1F500FEA265 /* ResizableLayer.swift */; };
+		43BD689629E4F1F500FEA265 /* FluidGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BD689129E4F1F500FEA265 /* FluidGradientView.swift */; };
+		43BD689729E4F1F500FEA265 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BD689229E4F1F500FEA265 /* CGPoint+Extensions.swift */; };
+		43BD689829E4F1F500FEA265 /* FluidGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BD689329E4F1F500FEA265 /* FluidGradient.swift */; };
 		43FD0D6F29CA4B63009CAE2E /* replyAiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FD0D6E29CA4B63009CAE2E /* replyAiApp.swift */; };
 		43FD0D7129CA4B63009CAE2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FD0D7029CA4B63009CAE2E /* ContentView.swift */; };
 		43FD0D7329CA4B64009CAE2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43FD0D7229CA4B64009CAE2E /* Assets.xcassets */; };
@@ -43,6 +56,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		434A368B29E4C5D800D39CE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		434A368D29E4CF3400D39CE7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		434A368F29E4D8F800D39CE7 /* StructuresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructuresView.swift; sourceTree = "<group>"; };
+		434A369129E4D9EB00D39CE7 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		435E524E29E307A700ED0DAF /* replyAi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = replyAi.entitlements; sourceTree = "<group>"; };
+		435F92B429F1FB4D008803E7 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		435F92B629F1FF66008803E7 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		435F92B829F20957008803E7 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		435F92BA29F22CEE008803E7 /* AppleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInManager.swift; sourceTree = "<group>"; };
+		43BD688F29E4F1F500FEA265 /* BlobLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlobLayer.swift; sourceTree = "<group>"; };
+		43BD689029E4F1F500FEA265 /* ResizableLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizableLayer.swift; sourceTree = "<group>"; };
+		43BD689129E4F1F500FEA265 /* FluidGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluidGradientView.swift; sourceTree = "<group>"; };
+		43BD689229E4F1F500FEA265 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		43BD689329E4F1F500FEA265 /* FluidGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluidGradient.swift; sourceTree = "<group>"; };
 		43FD0D6B29CA4B63009CAE2E /* replyAi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = replyAi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43FD0D6E29CA4B63009CAE2E /* replyAiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = replyAiApp.swift; sourceTree = "<group>"; };
 		43FD0D7029CA4B63009CAE2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +117,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43BD688A29E4F0D700FEA265 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				43FD0D7929CA4B64009CAE2E /* replyAi.xcdatamodeld */,
+				43FD0D7729CA4B64009CAE2E /* Persistence.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		43BD688B29E4F0DE00FEA265 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				434A369129E4D9EB00D39CE7 /* WelcomeView.swift */,
+				434A368F29E4D8F800D39CE7 /* StructuresView.swift */,
+				434A368D29E4CF3400D39CE7 /* MainView.swift */,
+				43FD0DB029CA9F5A009CAE2E /* ShareViewController.swift */,
+				43FD0DAE29CA87B1009CAE2E /* ViewExtension.swift */,
+				43FD0DA229CA7B9E009CAE2E /* SettingsView.swift */,
+				43FD0D7029CA4B63009CAE2E /* ContentView.swift */,
+				43FD0DA029CA6CE5009CAE2E /* ChatBubble.swift */,
+				43FD0D9E29CA4B7A009CAE2E /* ChatView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		43BD688C29E4F0E400FEA265 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				434A368B29E4C5D800D39CE7 /* AppDelegate.swift */,
+				43FD0DAA29CA82D2009CAE2E /* ThemeManager.swift */,
+				43FD0DAC29CA82EE009CAE2E /* AppThemeEnvironmentKey.swift */,
+				43FD0D6E29CA4B63009CAE2E /* replyAiApp.swift */,
+				435F92B429F1FB4D008803E7 /* AppState.swift */,
+				435F92B629F1FF66008803E7 /* OnboardingView.swift */,
+				435F92B829F20957008803E7 /* UserDefaultsManager.swift */,
+				435F92BA29F22CEE008803E7 /* AppleSignInManager.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		43BD688D29E4F18100FEA265 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				43BD688E29E4F1F500FEA265 /* FluidGradient */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		43BD688E29E4F1F500FEA265 /* FluidGradient */ = {
+			isa = PBXGroup;
+			children = (
+				43BD688F29E4F1F500FEA265 /* BlobLayer.swift */,
+				43BD689029E4F1F500FEA265 /* ResizableLayer.swift */,
+				43BD689129E4F1F500FEA265 /* FluidGradientView.swift */,
+				43BD689229E4F1F500FEA265 /* CGPoint+Extensions.swift */,
+				43BD689329E4F1F500FEA265 /* FluidGradient.swift */,
+			);
+			path = FluidGradient;
+			sourceTree = "<group>";
+		};
 		43FD0D6229CA4B63009CAE2E = {
 			isa = PBXGroup;
 			children = (
@@ -113,20 +200,14 @@
 		43FD0D6D29CA4B63009CAE2E /* replyAi */ = {
 			isa = PBXGroup;
 			children = (
-				43FD0D6E29CA4B63009CAE2E /* replyAiApp.swift */,
-				43FD0D7029CA4B63009CAE2E /* ContentView.swift */,
+				43BD688D29E4F18100FEA265 /* Lib */,
+				43BD688C29E4F0E400FEA265 /* Controller */,
+				43BD688B29E4F0DE00FEA265 /* View */,
+				43BD688A29E4F0D700FEA265 /* Model */,
+				435E524E29E307A700ED0DAF /* replyAi.entitlements */,
 				43FD0D7229CA4B64009CAE2E /* Assets.xcassets */,
-				43FD0D7729CA4B64009CAE2E /* Persistence.swift */,
 				43FD0D7C29CA4B64009CAE2E /* Info.plist */,
-				43FD0D7929CA4B64009CAE2E /* replyAi.xcdatamodeld */,
 				43FD0D7429CA4B64009CAE2E /* Preview Content */,
-				43FD0D9E29CA4B7A009CAE2E /* ChatView.swift */,
-				43FD0DA029CA6CE5009CAE2E /* ChatBubble.swift */,
-				43FD0DA229CA7B9E009CAE2E /* SettingsView.swift */,
-				43FD0DAA29CA82D2009CAE2E /* ThemeManager.swift */,
-				43FD0DAC29CA82EE009CAE2E /* AppThemeEnvironmentKey.swift */,
-				43FD0DAE29CA87B1009CAE2E /* ViewExtension.swift */,
-				43FD0DB029CA9F5A009CAE2E /* ShareViewController.swift */,
 			);
 			path = replyAi;
 			sourceTree = "<group>";
@@ -286,17 +367,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				434A368C29E4C5D800D39CE7 /* AppDelegate.swift in Sources */,
+				434A368E29E4CF3400D39CE7 /* MainView.swift in Sources */,
 				43FD0DA329CA7B9E009CAE2E /* SettingsView.swift in Sources */,
+				43BD689629E4F1F500FEA265 /* FluidGradientView.swift in Sources */,
 				43FD0DB129CA9F5A009CAE2E /* ShareViewController.swift in Sources */,
 				43FD0D7829CA4B64009CAE2E /* Persistence.swift in Sources */,
+				43BD689729E4F1F500FEA265 /* CGPoint+Extensions.swift in Sources */,
+				435F92B929F20957008803E7 /* UserDefaultsManager.swift in Sources */,
+				43BD689529E4F1F500FEA265 /* ResizableLayer.swift in Sources */,
 				43FD0DA129CA6CE5009CAE2E /* ChatBubble.swift in Sources */,
+				43BD689829E4F1F500FEA265 /* FluidGradient.swift in Sources */,
+				434A369029E4D8F800D39CE7 /* StructuresView.swift in Sources */,
 				43FD0DAB29CA82D2009CAE2E /* ThemeManager.swift in Sources */,
 				43FD0DAF29CA87B1009CAE2E /* ViewExtension.swift in Sources */,
 				43FD0DAD29CA82EE009CAE2E /* AppThemeEnvironmentKey.swift in Sources */,
+				43BD689429E4F1F500FEA265 /* BlobLayer.swift in Sources */,
+				435F92BB29F22CEE008803E7 /* AppleSignInManager.swift in Sources */,
+				434A369229E4D9EB00D39CE7 /* WelcomeView.swift in Sources */,
+				435F92B529F1FB4D008803E7 /* AppState.swift in Sources */,
 				43FD0D7129CA4B63009CAE2E /* ContentView.swift in Sources */,
 				43FD0D9F29CA4B7A009CAE2E /* ChatView.swift in Sources */,
 				43FD0D7B29CA4B64009CAE2E /* replyAi.xcdatamodeld in Sources */,
 				43FD0D6F29CA4B63009CAE2E /* replyAiApp.swift in Sources */,
+				435F92B729F1FF66008803E7 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +546,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = replyAi/replyAi.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"replyAi/Preview Content\"";
@@ -463,6 +558,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,6 +566,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benjaminsurrey.replyAi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -481,6 +580,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = replyAi/replyAi.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"replyAi/Preview Content\"";
@@ -492,6 +592,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -499,6 +600,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benjaminsurrey.replyAi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

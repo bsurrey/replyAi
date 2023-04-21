@@ -10,7 +10,7 @@ import SwiftUI // Import SwiftUI framework
 // Define a new custom environment key called AppThemeEnvironmentKey
 struct AppThemeEnvironmentKey: EnvironmentKey {
     // Set the default value for this environment key to AppTheme.system
-    static let defaultValue: AppTheme = .system
+    static let defaultValue: AppTheme = .dark
 }
 
 // Extend the EnvironmentValues struct to include the new custom environment key

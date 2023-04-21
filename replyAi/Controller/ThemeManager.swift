@@ -12,10 +12,10 @@ enum AppTheme: Int, Identifiable, CaseIterable {
     case system // Case for using the system's default theme
     case light // Case for using the light theme
     case dark // Case for using the dark theme
-
+    
     // Computed property to return the rawValue of the enum case as its Identifiable id
     var id: Int { rawValue }
-
+    
     // Computed property to return a human-readable description of the theme
     var description: String {
         switch self {
@@ -27,7 +27,7 @@ enum AppTheme: Int, Identifiable, CaseIterable {
             return "Dark Mode"
         }
     }
-
+    
     // Computed property to return the corresponding ColorScheme for the theme
     var colorScheme: ColorScheme {
         switch self {
@@ -53,6 +53,11 @@ enum AppTheme: Int, Identifiable, CaseIterable {
 
 // Define a class called ThemeManager that conforms to the ObservableObject protocol
 class ThemeManager: ObservableObject {
+    // Computed property to return the current ColorScheme based on the appTheme
+    var currentColorScheme: ColorScheme {
+        AppTheme(rawValue: appTheme)?.colorScheme ?? .dark
+    }
+    
     // Define a property called appTheme that's stored in the App Storage with a key "appTheme"
     @AppStorage("appTheme") var appTheme: Int = AppTheme.system.rawValue {
         didSet {
@@ -60,7 +65,7 @@ class ThemeManager: ObservableObject {
             objectWillChange.send()
         }
     }
-
+    
     // Define a function to update the appTheme property based on a provided AppTheme value
     func updateTheme(theme: AppTheme) {
         appTheme = theme.rawValue // Set the appTheme to the raw value of the provided theme

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "DA58B20F-D8F3-4C6B-83F1-4AC6A8801C03"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3954F73E-BCF2-43D7-B27C-58DDDA0F05D3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "replyAi/ChatView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
+            landmarkName = "sendMessageDirect()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "445A2880-9141-4591-BA19-DEF9F1BDD19F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "replyAi/ChatView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "ChatView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "445A2880-9141-4591-BA19-DEF9F1BDD19F - 1e5fe9f3076f00d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "replyAi.ChatView.prompt.getter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "replyAi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benjamin/Documents/xcode/replyAi/replyAi/ChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "445A2880-9141-4591-BA19-DEF9F1BDD19F - c1d7efb82f8a019"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "replyAi.ChatView.prompt.setter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "replyAi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benjamin/Documents/xcode/replyAi/replyAi/ChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "445A2880-9141-4591-BA19-DEF9F1BDD19F - 7f5fae08aa5e5408"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "replyAi.ChatView.prompt.modify : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "replyAi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benjamin/Documents/xcode/replyAi/replyAi/ChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "445A2880-9141-4591-BA19-DEF9F1BDD19F - f10aaacbfae3f419"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "replyAi.ChatView.prompt.modify : Swift.Optional&lt;Swift.String&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "replyAi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benjamin/Documents/xcode/replyAi/replyAi/ChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "445A2880-9141-4591-BA19-DEF9F1BDD19F - 5a2f0590fedc7151"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "replyAi.ChatView.$prompt.getter : SwiftUI.Binding&lt;Swift.Optional&lt;Swift.String&gt;&gt;"
+                  moduleName = "replyAi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benjamin/Documents/xcode/replyAi/replyAi/ChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "445A2880-9141-4591-BA19-DEF9F1BDD19F - 2ead190da64a3d46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "replyAi.ChatView.init() -&gt; replyAi.ChatView"
+                  moduleName = "replyAi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benjamin/Documents/xcode/replyAi/replyAi/ChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "532">
+               </Location>
+               <Location
+                  uuid = "445A2880-9141-4591-BA19-DEF9F1BDD19F - 2ead190da64a3d46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "replyAi.ChatView.init() -&gt; replyAi.ChatView"
+                  moduleName = "replyAi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benjamin/Documents/xcode/replyAi/replyAi/ChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "552">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
