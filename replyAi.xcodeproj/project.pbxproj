@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		434A368C29E4C5D800D39CE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434A368B29E4C5D800D39CE7 /* AppDelegate.swift */; };
 		434A368E29E4CF3400D39CE7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434A368D29E4CF3400D39CE7 /* MainView.swift */; };
-		434A369029E4D8F800D39CE7 /* StructuresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434A368F29E4D8F800D39CE7 /* StructuresView.swift */; };
+		434A369029E4D8F800D39CE7 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434A368F29E4D8F800D39CE7 /* ChatsView.swift */; };
 		434A369229E4D9EB00D39CE7 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434A369129E4D9EB00D39CE7 /* WelcomeView.swift */; };
 		435F92B529F1FB4D008803E7 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435F92B429F1FB4D008803E7 /* AppState.swift */; };
 		435F92B729F1FF66008803E7 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435F92B629F1FF66008803E7 /* OnboardingView.swift */; };
@@ -58,7 +58,7 @@
 /* Begin PBXFileReference section */
 		434A368B29E4C5D800D39CE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		434A368D29E4CF3400D39CE7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		434A368F29E4D8F800D39CE7 /* StructuresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructuresView.swift; sourceTree = "<group>"; };
+		434A368F29E4D8F800D39CE7 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
 		434A369129E4D9EB00D39CE7 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		435E524E29E307A700ED0DAF /* replyAi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = replyAi.entitlements; sourceTree = "<group>"; };
 		435F92B429F1FB4D008803E7 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -129,8 +129,9 @@
 		43BD688B29E4F0DE00FEA265 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				435F92B629F1FF66008803E7 /* OnboardingView.swift */,
 				434A369129E4D9EB00D39CE7 /* WelcomeView.swift */,
-				434A368F29E4D8F800D39CE7 /* StructuresView.swift */,
+				434A368F29E4D8F800D39CE7 /* ChatsView.swift */,
 				434A368D29E4CF3400D39CE7 /* MainView.swift */,
 				43FD0DB029CA9F5A009CAE2E /* ShareViewController.swift */,
 				43FD0DAE29CA87B1009CAE2E /* ViewExtension.swift */,
@@ -150,7 +151,6 @@
 				43FD0DAC29CA82EE009CAE2E /* AppThemeEnvironmentKey.swift */,
 				43FD0D6E29CA4B63009CAE2E /* replyAiApp.swift */,
 				435F92B429F1FB4D008803E7 /* AppState.swift */,
-				435F92B629F1FF66008803E7 /* OnboardingView.swift */,
 				435F92B829F20957008803E7 /* UserDefaultsManager.swift */,
 				435F92BA29F22CEE008803E7 /* AppleSignInManager.swift */,
 			);
@@ -378,7 +378,7 @@
 				43BD689529E4F1F500FEA265 /* ResizableLayer.swift in Sources */,
 				43FD0DA129CA6CE5009CAE2E /* ChatBubble.swift in Sources */,
 				43BD689829E4F1F500FEA265 /* FluidGradient.swift in Sources */,
-				434A369029E4D8F800D39CE7 /* StructuresView.swift in Sources */,
+				434A369029E4D8F800D39CE7 /* ChatsView.swift in Sources */,
 				43FD0DAB29CA82D2009CAE2E /* ThemeManager.swift in Sources */,
 				43FD0DAF29CA87B1009CAE2E /* ViewExtension.swift in Sources */,
 				43FD0DAD29CA82EE009CAE2E /* AppThemeEnvironmentKey.swift in Sources */,
@@ -477,7 +477,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -531,7 +531,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -567,7 +567,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.benjaminsurrey.replyAi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -601,7 +601,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.benjaminsurrey.replyAi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

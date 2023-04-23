@@ -46,7 +46,13 @@ extension AppleSignInManager: ASAuthorizationControllerDelegate {
 
 extension AppleSignInManager: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        return UIApplication.shared.windows.first!
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+            fatalError("Unable to find a window scene")
+        }
+        guard let window = windowScene.windows.first else {
+            fatalError("Unable to find a window")
+        }
+        return window
     }
 }
 

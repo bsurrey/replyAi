@@ -37,10 +37,11 @@ struct OnboardingView: View {
         VStack {
             Spacer()
             
-            Text("Welcome to AI")
+            Text("Welcome")
                 .font(.system(size: 80))
-                .fontWeight(.thin)
+                .fontWeight(.regular)
                 .multilineTextAlignment(.center)
+                .foregroundColor(.black)
             
             Spacer()
             
@@ -69,22 +70,20 @@ struct OnboardingView: View {
             }) {
                 Text("Skip")
                     .font(.headline)
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 40)
-                    .padding(.vertical, 12)
-                    .background(Color.blue)
-                    .cornerRadius(8)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                    .padding()
             }
             .padding(.bottom)
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
-            FluidGradient(blobs: [.cyan, .green, .blue],
-                          highlights: [.cyan, .red, .blue],
+            FluidGradient(blobs: [.green, .green, .blue, .red, .white],
+                          highlights: [.cyan, .red, .blue, .mint, .white, .yellow],
                           speed: 0.50,
-                          blur: 0.8)
-            .background(.quaternary)
+                          blur: 0.7)
+            .background(.mint)
             .ignoresSafeArea()
         )
     }
@@ -103,12 +102,15 @@ struct OnboardingView: View {
 
 import SwiftUI
 
-struct WelcomeView_Previews: PreviewProvider {
+struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            WelcomeView()
-                .environmentObject(MockAppState())
-                .previewDisplayName("Welcome View")
+            OnboardingView(onDismiss: {
+                return
+            })
+            .environmentObject(ThemeManager())
+            .environmentObject(MockAppState())
+            .previewDisplayName("Welcome View")
         }
     }
 }

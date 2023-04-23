@@ -10,8 +10,6 @@ import SwiftUI
 extension View {
     func applyEnvironment(appTheme: AppTheme) -> some View {
         self
-            .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-            .environment(\.colorScheme, appTheme.colorScheme)
-            .environment(\.appTheme, appTheme)
+            .environmentObject(ThemeManager())
     }
 }

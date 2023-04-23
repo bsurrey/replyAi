@@ -24,5 +24,6 @@ struct ChatBubble_Previews: PreviewProvider {
             ("hello world", true),
             ("hello world", false),
         ])
+        .environmentObject(ThemeManager())
     }
 }

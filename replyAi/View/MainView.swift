@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var showOnboarding = !UserDefaultsManager.shared.hasCompletedOnboarding()
+    @State public var showOnboarding = !UserDefaultsManager.shared.hasCompletedOnboarding()
+    
+    @State public var currentSelection = 1
     
     var body: some View {
-        TabView(selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Selection@*/.constant(1)/*@END_MENU_TOKEN@*/) {
-            ChatView()
+        TabView(selection: $currentSelection) {
+            ChatsView()
                 .tabItem {
-                    Label("Chat", systemImage: "brain.head.profile")
+                    Label("Chats", systemImage: "bubble.right")
+                        .labelStyle(.titleAndIcon)
+                }.tag(1)
+            
+            ChatsView()
+                .tabItem {
+                    Label("Images", systemImage: "photo.stack.fill")
                         .labelStyle(.titleAndIcon)
                 }.tag(1)
             
@@ -36,7 +44,7 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(showOnboarding: false)
             .environmentObject(ThemeManager())
     }
 }

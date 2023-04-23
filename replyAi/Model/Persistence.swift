@@ -13,9 +13,17 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
+        for _ in 0..<5 {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
+            
+            let newChats = Chat(context: viewContext)
+            newChats.title = "Name"
+            newChats.uuid = UUID()
+            newChats.color = "#f1f1f1"
+            newChats.note = "jaksdaksjdnaksd"
+            newChats.timestamp = Date()
+            newChats.icon = "avatar-\(Int.random(in: 1..<5))"
         }
         do {
             try viewContext.save()

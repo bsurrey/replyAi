@@ -20,6 +20,8 @@ struct ChatView: View {
     @State private var pasteboardText: String?
     @State private var showSettings = false
     
+    @StateObject var chat: Chat = Chat()
+    
     @Environment(\.colorScheme) private var systemColorScheme
     @Environment(\.appTheme) private var appTheme
     @EnvironmentObject var themeManager: ThemeManager
@@ -35,8 +37,9 @@ struct ChatView: View {
                     ScrollView {
                         ScrollViewReader { proxy in
                             VStack(alignment: .leading, spacing: 8) {
-                                ForEach(messages.indices, id: \.self) { index in
-                                    let (msg, isUser) = messages[index]
+                                ForEach(chat.messages, id: \.self) { message in
+                                    let isUser = message.fromUser
+                                    
                                     HStack {
                                         if isUser {
                                             Spacer()
@@ -131,27 +134,25 @@ struct ChatView: View {
                         .padding(.horizontal)
                     }.background(Color(.systemGray6))
                 }
-                .navigationBarItems(leading: Button(action: {
-                    showClearAlert.toggle()
-                }) {
-                    Image(systemName: "xmark")
-                        .imageScale(.large)
-                        .frame(width: 44, height: 44, alignment: .leading)
-                }, trailing: Button(action: {
-                    showSettings.toggle()
-                }) {
-                    Image(systemName: "gear")
-                        .imageScale(.large)
-                        .frame(width: 44, height: 44, alignment: .trailing)
-                })
+                
+                
             }
+            // .toolbar(.hidden, for: .tabBar)
+
+        }
             .preferredColorScheme(themeManager.currentColorScheme) // Use the currentColorScheme property
             .alert(isPresented: $showClearAlert) {
                 Alert(title: Text("Clear Chat Log"), message: Text("Are you sure you want to clear the chat log?"), primaryButton: .destructive(Text("Clear")) {
                     messages.removeAll()
                 }, secondaryButton: .cancel())
             }
-        }
+            .navigationBarItems(trailing: Button(action: {
+                showClearAlert.toggle()
+            }) {
+                Image(systemName: "xmark")
+                    .imageScale(.large)
+                    .frame(width: 44, height: 44, alignment: .trailing)
+            })
     }
     
     private func shareMessage(index: Int) {
